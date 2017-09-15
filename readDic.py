@@ -6,7 +6,7 @@ def main(searchText):
     wordExp = r"(?<=^\…)\w+(?=\＠)"
     with open('modern-chinese-dic.txt', 'r', encoding='utf-8') as f:
         modernDic = f.read()
-        testExpression = r'.*(?<=[^(不)|(没有)])' + searchText + r'.*\n'
+        testExpression = r'.*(?<=[^(不)|(没有)])' + searchText + r'(?=[^(\’相对)]).*\n'
         results = re.findall(testExpression, modernDic)
         relatedWordsDic = {}
         relatedCharactersDic = {}
